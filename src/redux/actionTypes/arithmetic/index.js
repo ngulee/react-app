@@ -1,0 +1,3 @@
+export const INCREASE_CONUT = 'INCREASE_CONUT';
+export const DECREASE_CONUT = 'DECREASE_CONUT';
+export const RESET_COUNT = 'RESET_COUNT';
