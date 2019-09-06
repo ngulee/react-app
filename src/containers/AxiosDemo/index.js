@@ -9,7 +9,7 @@ const Axios = (props) => {
     return () => {
       console.log('args2:');
     }
-  }, [])
+  });
   return (
     <div>
       <button onClick={() => { getMockData(); }}>获取数据</button>

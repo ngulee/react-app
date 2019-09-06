@@ -5,6 +5,7 @@ import ReduxDemo from './containers/ReduxDemo';
 import Directions from './containers/Directions';
 import RouterDemo from './containers/RouterDemo';
 import AxiosDemo from './containers/AxiosDemo';
+import BaseComponents from './containers/BaseComponents';
 
 import './App.css';
 
@@ -17,6 +18,7 @@ function App(props) {
       <Route path="/directions" component={Directions} />
       <Route path="/router" component={RouterDemo} />
       <Route path="/axios" component={AxiosDemo} />
+      <Route path="/base-components" component={BaseComponents} />
     </Switch>
   );
 }

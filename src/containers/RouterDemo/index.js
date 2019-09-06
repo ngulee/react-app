@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Route, Link } from 'react-router-dom';
 
 import About from './About';
 import Basic from './Basic';
 import RouterAPI from './RouterAPI';
 
-export default ({ match }) => {
+export default ({ match, history }) => {
+
+  useEffect(() => {
+    const handleRouterListener = (...args) => {
+      console.log('args:', args)
+    }
+    window.addEventListener('hashchange', handleRouterListener)
+    // history.listen(handleRouterListener)
+  })
   return (
     <div className="router-demo">
       <h3>This is a React Router Demo.</h3>
