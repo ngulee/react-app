@@ -7,12 +7,14 @@ import MyHighCharts from './MyHighCharts';
 import CircleDotLoading from './Loading/CircleDotLoading';
 import LineDotLoading from './Loading/LineDotLoading';
 import RectLoading from './Loading/RectLoading';
+import CircleLoading from './Loading/CircleLoading';
 
 const BaseComponents = (props) => {
   const { match = {} } = props;
   return (
     <div>
       <h1>基础组件</h1>
+      <CircleLoading />
       <RectLoading />
       <LineDotLoading />
       <CircleDotLoading />
