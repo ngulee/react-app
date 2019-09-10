@@ -1,0 +1,9 @@
+.highcharts-tooltip {
+  display: none;
+}
+
+.highcharts-spline-series {
+  & > path {
+    box-shadow: 2px 2px red;
+  }
+}
