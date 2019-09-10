@@ -6,6 +6,7 @@ import Directions from './containers/Directions';
 import RouterDemo from './containers/RouterDemo';
 import AxiosDemo from './containers/AxiosDemo';
 import BaseComponents from './containers/BaseComponents';
+import DaPP from './containers/DaPP';
 
 import './App.css';
 
@@ -19,6 +20,7 @@ function App(props) {
       <Route path="/router" component={RouterDemo} />
       <Route path="/axios" component={AxiosDemo} />
       <Route path="/base-components" component={BaseComponents} />
+      <Route path="/dapp" component={DaPP} />
     </Switch>
   );
 }

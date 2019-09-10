@@ -20,7 +20,7 @@ const BaseComponents = (props) => {
       <CircleDotLoading />
       <MyHighCharts />
       <div style={{ width: '80%'}}>
-        <Progress />
+        <Progress background='linear-gradient(90deg,rgba(255,122,85,1) 0%,rgba(255,60,29,1) 100%)' />
         <Progress />
         <Progress />
       </div>
