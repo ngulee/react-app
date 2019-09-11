@@ -1,0 +1,21 @@
+.round-rect {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  height: 24px;
+  border-radius: 100px;
+  background:rgba(248,248,248,1);
+  font-size:12px;
+  font-family:PingFangSC;
+  color:rgba(153,153,153,1);
+  text-align: center;
+  & > li {
+    &:first-of-type {
+      text-align: left;
+    }
+    &:last-of-type {
+      text-align: right;
+    }
+  }
+}

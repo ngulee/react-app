@@ -1,8 +1,12 @@
-import React, { memo } from 'react';
+import React, { memo, useState, useEffect } from 'react';
+import axios from 'axios';
 import * as Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
 import './index.scss';
+const requestMiShopFlow = () => {
+  return axios.get('http://mock.be.mi.com/mock/418/statFlow/widget');
+}
 
 const options = {
   credits: {

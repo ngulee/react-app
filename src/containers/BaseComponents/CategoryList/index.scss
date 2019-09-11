@@ -1,0 +1,27 @@
+.category-list {
+  &__item {
+    &__detail {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 26px;
+      padding-bottom: 9px;
+      font-size:13px;
+      &__item {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        &:first-of-type {
+          font-size:13px;
+          font-weight:500;
+        }
+        &:nth-of-type(n + 2) {
+          text-align: center;
+        }
+        &:last-of-type {
+          text-align: right;
+        }
+      }
+    }
+  }
+}
