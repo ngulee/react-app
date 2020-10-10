@@ -10,6 +10,7 @@ export default memo((props = {}) => {
     dataSource = [],
     headHeight = [],
     bodyRowsHeights = [],
+    bodyRowsWidths = [],
     headColumsWidth = [],
   } = props;
 
@@ -18,6 +19,7 @@ export default memo((props = {}) => {
       <Thead
         columns={columns}
         headHeight={headHeight}
+        bodyRowsWidths={bodyRowsWidths}
         headColumsWidth={headColumsWidth}
       />
       <Tbody

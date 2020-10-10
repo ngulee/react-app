@@ -11,6 +11,8 @@ export default () => (
       <li><Link to="/axios">请求接口，获取数据</Link></li>
       <li><Link to="/base-components">基础组件</Link></li>
       <li><Link to="/dapp">dapp改版</Link></li>
+      <li><Link to="/context">Context Demo</Link></li>
+      <li><Link to="/css_module">CSS Module</Link></li>
     </ul>
   </div>
 );
