@@ -9,6 +9,7 @@ import reducers from './redux/reducers';
 import './index.css';
 import App from './App';
 
+
 const loggerMiddleware = createLogger();
 const store = createStore(reducers,
   applyMiddleware(
