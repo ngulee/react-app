@@ -9,12 +9,23 @@ import reducers from './redux/reducers';
 import './index.css';
 import App from './App';
 
+<<<<<<< HEAD
 
 const loggerMiddleware = createLogger();
+=======
+//引入redux-devtools-extension的可视化工具（有点吊）
+import { composeWithDevTools } from 'redux-devtools-extension';//devToolsEnhancer,
+
+// 调用日志打印方法 collapsed是让action折叠，看着舒服点
+const loggerMiddleware = createLogger({collapsed:true});
+
+// 创建一个中间件集合
+const middleware = [thunkMiddleware, loggerMiddleware];
+
+>>>>>>> 56dde5c451642b6d8400b92496e6d36f6838ba2f
 const store = createStore(reducers,
-  applyMiddleware(
-    thunkMiddleware,
-    loggerMiddleware,
+  composeWithDevTools(
+    applyMiddleware(...middleware)
   )
 );
 

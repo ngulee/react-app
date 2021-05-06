@@ -105,7 +105,7 @@ const columnsMock = [
     dataIndex: 'gender',
     key: 'gender',
     width: 50,
-    fixed: 'right',
+    // fixed: 'right',
     rowSpan: 4,
     render: () => {
       return (
@@ -151,6 +151,7 @@ export default (props = {}) => {
     hasLeftFixed: false,
     hasRightFixed: false,
     bodyRowsHeights: [],
+    bodyRowsWidths: [],
     headHeight: [],
   });
 
@@ -167,25 +168,34 @@ export default (props = {}) => {
       const isOverflowY = tableScroll.clientHeight > scrollYBox.clientHeight;
       const bodyRows = [...tableScroll.querySelectorAll('tbody > tr')]
         .map(tr => tr.clientHeight);
+      const bodyCloumns = [...tableScroll.querySelectorAll('tbody > tr:first-of-type > td')]
+        .map(td => td.clientWidth);
       const headHeightValue = [...tableScroll.querySelectorAll('thead > tr')]
         .reduce((total, current) => total + current.clientHeight, 0);
-
+      console.log('bodyCloumns:', bodyCloumns);
       setComponentState({
         hasTitleFixed: isOverflowY,
         hasLeftFixed: isOverflowX && hasFixed(columns, 'left'),
         hasRightFixed: isOverflowX && hasFixed(columns, 'right'),
         bodyRowsHeights: bodyRows,
+        bodyRowsWidths: bodyCloumns,
         headHeight: [headHeightValue],
       });
     }, 50);
   }, [columns]);
 
   const {
+    hasHeaderFixed = true,
     hasLeftFixed,
     hasRightFixed,
     bodyRowsHeights,
+    bodyRowsWidths,
     headHeight,
   } = componentState;
+
+  console.log('bodyRowsHeights:', bodyRowsHeights);
+  console.log('headHeight:', headHeight);
+  console.log('bodyRowsWidths:', bodyRowsWidths);
 
 
   return (
@@ -207,6 +217,23 @@ export default (props = {}) => {
               bodyRowsHeights={bodyRowsHeights}
             />
           </div>
+          {
+            hasHeaderFixed ? (
+              <div className={`${prefixCls}-table__header`}>
+                <div className={`${prefixCls}-table__header__outer`}>
+                  <div className={`${prefixCls}-table__header__inner`}>
+                    <BaseTable
+                      columns={columns}
+                      dataSource={[]}
+                      // headHeight={headHeight}
+                      bodyRowsHeights={bodyRowsHeights}
+                      headColumsWidth={bodyRowsWidths}
+                    />
+                  </div>
+                </div>
+              </div>
+            ) : null
+          }
           {
             hasLeftFixed ? (
               <div className={`${prefixCls}-table__left`}>

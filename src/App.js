@@ -1,3 +1,12 @@
+/*
+ * @Author: lizuoxing 
+ * @Date: 2019-11-01 16:18:40 
+ * @Last Modified by: lizuoxing
+ * @Last Modified time: 2020-10-10 17:21:26
+ */
+
+
+
 import React from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import Home from './containers/Home';
@@ -7,8 +16,12 @@ import RouterDemo from './containers/RouterDemo';
 import AxiosDemo from './containers/AxiosDemo';
 import BaseComponents from './containers/BaseComponents';
 import DaPP from './containers/DaPP';
+import ContextDemo from './containers/ContextDemo';
+import CssModule from './containers/CssModule';
 
 import './App.css';
+
+console.log('ddd')
 
 function App(props) {
   console.log('app props:', props);
@@ -21,6 +34,8 @@ function App(props) {
       <Route path="/axios" component={AxiosDemo} />
       <Route path="/base-components" component={BaseComponents} />
       <Route path="/dapp" component={DaPP} />
+      <Route path="/context" component={ContextDemo} />
+      <Route path="/css_module" component={CssModule} />
     </Switch>
   );
 }

@@ -8,6 +8,7 @@ import CircleDotLoading from './Loading/CircleDotLoading';
 import LineDotLoading from './Loading/LineDotLoading';
 import RectLoading from './Loading/RectLoading';
 import CircleLoading from './Loading/CircleLoading';
+import CircleProgress from './CircleProgress';
 
 const BaseComponents = (props) => {
   const { match = {} } = props;
@@ -25,10 +26,11 @@ const BaseComponents = (props) => {
         <Progress />
       </div>
       <LineOnePx />
+      <CircleProgress />>
       <Link to={`${match.url}/table`} >Table</Link>
       <Route path={`${match.url}/table`} component={() => (
         <div style={{ height: 500 }}>
-          <Table scrollDirection='vertical' />
+          <Table scrollDirection='horizontal' />
         </div>
       )} />
     </div>

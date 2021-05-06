@@ -1,0 +1,10 @@
+.circle-progress {
+  position: relative;
+  &::after {
+    position: absolute;
+    content: attr(data-text);
+    height: 18px;
+    width: 18px;
+    font-size: 18px;
+  }
+}
